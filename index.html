@@ -96,6 +96,112 @@
       margin-top: 24px;
     }
 
+    .selector-stack {
+      width: 100%;
+      max-width: 760px;
+      margin-top: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .selector-row {
+      display: grid;
+      gap: 10px;
+      justify-items: center;
+    }
+
+    .selector-label {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .selector-note {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .choice-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .choice-chip {
+      text-align: center;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 999px;
+      color: var(--text);
+      transition: border-color .16s ease, background .16s ease, box-shadow .16s ease, transform .16s ease;
+      min-width: 118px;
+    }
+
+    .choice-chip {
+      padding: 10px 14px;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2px;
+    }
+
+    .choice-chip.selected {
+      border-color: #8cac93;
+      background: linear-gradient(180deg, #f4fbf5, #eef7f0);
+      box-shadow: 0 10px 24px rgba(77, 106, 83, 0.12);
+    }
+
+    .choice-title {
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .choice-subtitle {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .copy-stack {
+      display: grid;
+      gap: 6px;
+    }
+
+    .copy-primary {
+      display: block;
+      color: inherit;
+      line-height: inherit;
+    }
+
+    .copy-secondary {
+      display: block;
+      color: var(--muted);
+      font-size: 0.94em;
+      line-height: 1.75;
+    }
+
+    .copy-note {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .inline-secondary {
+      color: rgba(255, 255, 255, 0.82);
+      font-weight: 600;
+    }
+
+    .btn-secondary .inline-secondary,
+    .match .inline-secondary,
+    .badge .inline-secondary,
+    .summary-toggle-label .inline-secondary {
+      color: var(--muted);
+    }
+
     .mini-panel {
       padding: 18px;
       border-radius: 18px;
@@ -248,6 +354,74 @@
       font-size: 16px;
       line-height: 1.7;
       white-space: pre-wrap;
+    }
+
+    .question-title .copy-primary {
+      white-space: pre-wrap;
+    }
+
+    body[data-language-mode="bi"] .copy-stack {
+      gap: 4px;
+    }
+
+    body[data-language-mode="bi"] .hero h1 .copy-secondary {
+      font-size: 0.44em;
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+      margin-top: 10px;
+      font-weight: 700;
+    }
+
+    body[data-language-mode="bi"] .hero .sub .copy-secondary {
+      font-size: 0.74em;
+      line-height: 1.55;
+    }
+
+    body[data-language-mode="bi"] .question-title .copy-secondary,
+    body[data-language-mode="bi"] .option .copy-secondary,
+    body[data-language-mode="bi"] .analysis-box .copy-secondary,
+    body[data-language-mode="bi"] .dim-item .copy-secondary,
+    body[data-language-mode="bi"] .note-box .copy-secondary,
+    body[data-language-mode="bi"] .author-content .copy-secondary,
+    body[data-language-mode="bi"] .type-subname .copy-secondary,
+    body[data-language-mode="bi"] .type-note .copy-secondary,
+    body[data-language-mode="bi"] .poster-caption .copy-secondary,
+    body[data-language-mode="bi"] .hint .copy-secondary {
+      font-size: 0.78em;
+      line-height: 1.55;
+    }
+
+    body[data-language-mode="bi"] .question-title .copy-secondary {
+      margin-top: 2px;
+    }
+
+    body[data-language-mode="bi"] .option .copy-secondary {
+      margin-top: 2px;
+    }
+
+    body[data-language-mode="bi"] .question {
+      padding: 16px;
+    }
+
+    body[data-language-mode="bi"] .question-title {
+      font-size: 15px;
+      line-height: 1.62;
+    }
+
+    body[data-language-mode="bi"] .question-title .copy-stack,
+    body[data-language-mode="bi"] .option .copy-stack {
+      gap: 3px;
+    }
+
+    body[data-language-mode="bi"] .option {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    body[data-language-mode="bi"] .question-title .copy-note {
+      font-size: 11px;
+      line-height: 1.55;
+      margin-top: 2px;
     }
 
     .options {
@@ -537,6 +711,17 @@
       font-size: 14px;
       line-height: 1.8;
     }
+
+    .type-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .type-note:empty {
+      display: none;
+    }
     .match {
       margin-top: 18px;
       display: inline-flex;
@@ -628,8 +813,7 @@
       gap: 12px;
     }
     .author-box summary::-webkit-details-marker { display: none; }
-    .author-box summary::after {
-      content: '展开';
+    .summary-toggle-label {
       font-size: 12px;
       font-weight: 700;
       color: var(--accent-strong);
@@ -639,15 +823,14 @@
       border-radius: 999px;
       flex-shrink: 0;
     }
-    .author-box[open] summary::after {
-      content: '收起';
-    }
     .author-content {
       border-top: 1px solid var(--line);
       padding: 0 18px 18px;
+      display: grid;
+      gap: 14px;
     }
     .author-content p {
-      margin: 14px 0 0;
+      margin: 0;
       color: #304034;
       font-size: 14px;
       line-height: 1.9;
@@ -678,6 +861,7 @@
       .hero, .test-wrap, .result-wrap { padding: 16px; }
       .hero h1 { font-size: 32px; }
       .question-title { font-size: 15px; }
+      .choice-chip { min-width: 0; flex: 1 1 120px; }
       .dim-grid,
       .score-grid { grid-template-columns: 1fr; }
     }
@@ -687,21 +871,32 @@
   <div class="shell">
     <section id="intro" class="screen active">
       <div class="hero card hero-minimal">
-        <h1>MBTI已经过时，SBTI来了。</h1>
+        <h1 id="introTitle">MBTI已经过时，SBTI来了。</h1>
+        <p class="sub" id="introSub">先挑个你看得懂的版本，别急着把电子魂魄扔进来。</p>
+
+        <div class="selector-stack">
+          <div class="selector-row">
+            <div class="selector-label" id="languageLabel">先选语言：</div>
+            <div class="choice-row" id="languageOptions"></div>
+          </div>
+          <div class="selector-row">
+            <div class="selector-label" id="genderLabel">要不要顺手改一下男女说法：</div>
+            <div class="choice-row" id="genderOptions"></div>
+          </div>
+          <div class="selector-note" id="genderHint">只轻轻动几道带男女语境的题，别怕，不会给你改命。</div>
+        </div>
+
         <div class="hero-actions hero-actions-single">
           <button id="startBtn" class="btn-primary">开始测试</button>
         </div>
-        <div style="padding-top: 2rem; display: flex; flex-direction: column;">
-          <span>
+
+        <div style="padding-top: 1.75rem; display: flex; flex-direction: column; gap: 6px; align-items: center;">
+          <span id="authorMetaLine">
             原作者：
             <a href="https://space.bilibili.com/417038183">B站@蛆肉儿串儿</a>
           </span>
-          <span>
-            托管：Cloudflare (免费)
-          </span>
-          <span>
-            域名：Spaceship (自费)
-          </span>
+          <span id="hostingMetaLine">托管：Cloudflare (免费)</span>
+          <span id="domainMetaLine">域名：Spaceship (自费)</span>
         </div>
       </div>
     </section>
@@ -736,35 +931,36 @@
             </div>
 
             <div class="type-box">
-              <div class="type-kicker" id="resultModeKicker">你的主类型</div>
+            <div class="type-kicker" id="resultModeKicker">你的主类型</div>
               <div class="type-name" id="resultTypeName">CTRL（拿捏者）</div>
               <div class="match" id="matchBadge">匹配度 92%</div>
               <div class="type-subname" id="resultTypeSub">系统备注会显示在这里。</div>
+              <div class="type-note" id="resultTypeNote"></div>
             </div>
           </div>
 
           <div class="analysis-box">
-            <h3>该人格的简单解读</h3>
+            <h3 id="analysisTitle">该人格的简单解读</h3>
             <p id="resultDesc"></p>
           </div>
 
           <div class="dim-box">
-            <h3>十五维度评分</h3>
+            <h3 id="dimensionTitle">十五维度评分</h3>
             <div id="dimList" class="dim-list"></div>
           </div>
 
           <div class="note-box">
-            <h3>友情提示</h3>
+            <h3 id="noteTitle">友情提示</h3>
             <p id="funNote">本测试仅供娱乐，别拿它当诊断、面试、相亲、分手、招魂、算命或人生判决书。</p>
           </div>
 
-                    <details class="author-box">
-            <summary>作者的话</summary>
-            <div class="author-content">
+          <details class="author-box" id="authorBox">
+            <summary>
+              <span id="authorSummary">作者的话</span>
+              <span id="authorToggleLabel" class="summary-toggle-label">展开</span>
+            </summary>
+            <div class="author-content" id="authorContent">
               <p>本测试首发于b站up主蛆肉儿串儿（UID417038183），初衷是劝诫一位爱喝酒的朋友戒酒。</p>
-              <p>由于作者的人格是SHIT愤世者，所以平等的攻击了各位，在此抱歉！！不过我是一个绝世大美女，你们一定会原谅我，有B站的朋友们也可以关注我。</p>
-              <p>关于这个测试，我没法很好的平衡娱乐和专业性，因此对于一些人格的阐释较为模糊或完全不准（如屌丝可能并非真的屌丝），如有冒犯非常抱歉！！</p>
-              <p>再鉴于时间精力有限，就随便搞了一个先这样玩玩，后续会慢慢完善修改的，总之好玩为主，还请不要用于盈利呀。</p>
             </div>
           </details>
         </div>
@@ -772,7 +968,7 @@
         <div class="result-actions">
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
             <button id="restartBtn" class="btn-secondary">重新测试</button>
-            <button id="toTopBtn" class="btn-primary">回到首页</button>
+            <button id="toTopBtn" class="btn-primary">回到设置</button>
           </div>
         </div>
       </div>
@@ -1471,9 +1667,300 @@
 };
     const dimensionOrder = ['S1','S2','S3','E1','E2','E3','A1','A2','A3','Ac1','Ac2','Ac3','So1','So2','So3'];
 
+    function copy(zh, en, noteZh = '', noteEn = '') {
+      return { zh, en, noteZh, noteEn };
+    }
+
+    const UI_TEXT = {
+      introTitle: copy('MBTI已经过时，SBTI来了。', 'MBTI is outdated. SBTI has crawled out of the abyss.'),
+      introSub: copy('先挑个你看得懂的版本，别急着把电子魂魄扔进来。', 'Pick a version your eyeballs can survive first. Then toss your digital soul in.'),
+      languageLabel: copy('先选语言：', 'Pick your language first:'),
+      genderLabel: copy('要不要顺手改一下男女说法：', 'Want the boy-girl wording tweaked while we are at it?'),
+      genderHint: copy('只轻轻动几道带男女语境的题，别怕，不会给你改命。', 'This only nudges a few gendered questions. Relax. We are not rewriting your fate.'),
+      startBtn: copy('开始测试', 'Start the test'),
+      backIntroBtn: copy('返回首页', 'Back to the front page'),
+      submitBtn: copy('提交并查看结果', 'Submit and face the verdict'),
+      restartBtn: copy('重新测试', 'Roll again'),
+      toTopBtn: copy('回到首页', 'Back to the front page'),
+      analysisTitle: copy('该人格的简单解读', 'A short unscientific reading of this creature'),
+      dimensionTitle: copy('十五维度评分', 'The fifteen little dimensions that sold you out'),
+      noteTitle: copy('友情提示', 'One tiny warning'),
+      authorSummary: copy('作者碎碎念', 'The creator rambling in the corner'),
+      authorToggleOpen: copy('展开', 'Open'),
+      authorToggleClose: copy('收起', 'Close'),
+      hiddenDimension: copy('维度已隐藏', 'Dimension hidden, stop peeking'),
+      supplementalQuestion: copy('补充题', 'Bonus nonsense'),
+      testHintPending: copy('全选完才会放行。世界已经够乱了，起码把题做完整。', 'This thing will not let you through until every visible question is answered. The world is messy enough already.'),
+      testHintComplete: copy('都做完了。现在可以把你的电子魂魄交给结果页审判。', 'All done. Time to hand your electronic soul over for sentencing.'),
+      mainType: copy('你的人格类型是', 'The machine has judged you as'),
+      hiddenType: copy('隐藏人格杀出来了', 'A hidden type just kicked the door in'),
+      fallbackType: copy('系统绷不住了', 'The system finally snapped'),
+      normalFunNote: copy('本测试仅供娱乐，别拿它当诊断、面试、相亲、分手、招魂、算命或人生判决书。你可以笑，但别太当真。', 'This test is for laughs. Do not drag it into diagnosis, hiring, dating, breakup court, ghost summoning, fortune-telling, or life sentencing. Laugh if you want. Just do not worship it.'),
+      specialFunNote: copy('本测试仅供娱乐。隐藏人格和傻乐兜底都属于作者故意埋的损招，请勿把它当成医学、心理学、相学、命理学或灵异学依据。', 'This is still just for fun. The hidden alcohol route and the HHHH emergency landing are traps planted on purpose, not medical, psychological, spiritual, or paranormal evidence.')
+    };
+
+    const LANGUAGE_OPTIONS = [
+      {
+        value: 'zh',
+        titleZh: '中文原版',
+        titleEn: 'CN'
+      },
+      {
+        value: 'bi',
+        titleZh: '中英对照',
+        titleEn: 'CN / EN'
+      },
+      {
+        value: 'en',
+        titleZh: '全英文',
+        titleEn: 'EN'
+      }
+    ];
+
+    const GENDER_OPTIONS = [
+      {
+        value: 'unspecified',
+        titleZh: '不改',
+        titleEn: 'as is'
+      },
+      {
+        value: 'male',
+        titleZh: '男',
+        titleEn: 'he'
+      },
+      {
+        value: 'female',
+        titleZh: '女',
+        titleEn: 'she'
+      }
+    ];
+
+    const QUESTION_COPY = {
+      q1: {
+        text: 'Behold the full loser lament: broke, shy, romantically barren, drifting through a garbage-tier life while everyone else seems to be living above ground. Meanwhile I am a sewer rat peeking through the manhole at other people\'s happiness. How hard does this punch you in the soul?',
+        options: ['I feel attacked.', 'What on earth did I just read?', 'Nope, not me.'],
+        note: 'The Chinese original piles several self-own internet archetypes into one giant tragic monologue and absolutely refuses to calm down.'
+      },
+      q2: {
+        text: 'Low-key, I often feel like I am not that good and everyone around me was assembled with better parts.',
+        options: ['True.', 'Sometimes.', 'Not really.']
+      },
+      q3: {
+        text: 'I have a pretty clear idea what kind of weirdo I really am.',
+        options: ['Disagree', 'Neutral', 'Agree']
+      },
+      q4: {
+        text: 'There is actually something in this rotten little life that I truly want.',
+        options: ['Disagree', 'Neutral', 'Agree']
+      },
+      q5: {
+        text: 'I do kind of need to keep climbing upward and becoming more dangerous.',
+        options: ['Disagree', 'Neutral', 'Agree']
+      },
+      q6: {
+        text: 'Other people\'s opinions are mostly just toilet paper blowing past in the wind to me.',
+        options: ['Disagree', 'Neutral', 'Agree'],
+        note: 'The original uses a deliberately trashy meme phrase for "I do not give a damn," and yes, it sounds wonderfully uncivilized.'
+      },
+      q7: {
+        text: 'Your partner disappears for 5+ hours and later says they were fighting for their life on the toilet. What is your first thought?',
+        options: ['Five hours? Something is off. Maybe they are hiding something.', 'I swing between trust and suspicion.', 'Maybe they really do feel awful today.']
+      },
+      q8: {
+        text: 'In relationships I do sometimes fear getting abandoned like a sad old sofa.',
+        options: ['Yes.', 'Sometimes.', 'No.']
+      },
+      q9: {
+        text: 'Hand on heart, sky as witness: when I get into a relationship I am not just out here clowning around.',
+        options: ['Not really.', 'Maybe?', 'Yes, absolutely.']
+      },
+      q10: {
+        text: 'Your partner is one of those respect-your-elders love-the-kids gentle-and-decent clean-living open-and-upright righteous silver-tongued observant worldly well-read endlessly kind devastatingly gorgeous freakishly flawless people. Faced with such a creature, what becomes of you?',
+        options: ['Even if they are built this absurdly well, I still would not fall in too deep.', 'Somewhere between A and C. My heart is wobbling, but it is not fully cooked yet.', 'I would cherish them like mad and probably mutate into a full-on love-brained idiot.']
+      },
+      q11: {
+        text: 'You start dating. Your partner turns out to be clingy as hell. What does your soul say?',
+        options: ['Honestly? Kinda great.', 'Either way is fine.', 'I would rather keep some independence.']
+      },
+      q12: {
+        text: 'Even in close relationships, personal space matters to me a lot. Love can be sweet, but please do not crawl into my ribcage.',
+        options: ['I actually like dependence and being depended on.', 'Depends.', 'Yes, absolutely.']
+      },
+      q13: {
+        text: 'Most people are basically decent at heart.',
+        options: ['Honestly, malicious hearts are more common than hemorrhoids.', 'Maybe.', 'Yes, I choose to believe that.']
+      },
+      q14: {
+        text: 'You are out on the street when this ridiculously cute little girl comes bouncing toward you. Cute from the front, cute from the side, cute on a vivo, cute on an iPhone, cute on a Huawei, cute on an OPPO, just offensively cute. Then she hands you a lollipop. What does your heart do?',
+        options: ['Waaah she is so nice, so cute, and she even gave me a lollipop!', 'Utterly dumbfounded. Automatic head-scratch animation begins.', 'Could this be some new breed of scam? Better get out of there.']
+      },
+      q15: {
+        text: 'Exams are near. School says evening study hall is mandatory and skipping it costs points, but tonight you promised to play a battle royale game with your crush. What do you do?',
+        options: ['Skip it. It is only once.', 'I would at least try to get leave.', 'Exams are coming. I am not going.']
+      },
+      q16: {
+        text: 'I enjoy kicking holes in routine and hate being tied down like livestock.',
+        options: ['Agree', 'Neutral', 'Disagree']
+      },
+      q17: {
+        text: 'I usually do things with some kind of target in mind instead of free-roaming like a confused goat.',
+        options: ['Disagree', 'Neutral', 'Agree']
+      },
+      q18: {
+        text: 'One day it suddenly hits me that life may not have some grand sacred meaning at all; we are just animals being yanked around by hormones and appetites, eating when hungry, sleeping when tired, and acting feral whenever desire switches on.',
+        options: ['Yeah, that is basically it.', 'Maybe, maybe not.', 'That is nonsense.']
+      },
+      q19: {
+        text: 'When I do stuff, I usually want progress and actual payoff, not just a quiet little life with zero disasters.',
+        options: ['Disagree', 'Neutral', 'Agree']
+      },
+      q20: {
+        text: 'You have been constipated on the toilet for 30 whole minutes. Which reaction feels the most spiritually accurate?',
+        options: ['Stay seated another 30 minutes and see what happens.', 'Smack my own butt and yell, "Come on, traitor ass!"', 'Use a laxative and get it over with.']
+      },
+      q21: {
+        text: 'I usually decide pretty fast. Endless wavering gets on my nerves.',
+        options: ['Disagree', 'Neutral', 'Agree']
+      },
+      q22: {
+        text: 'There is no question here. Blind-pick and suffer.',
+        options: ['After overthinking it, maybe A?', 'Uh... maybe B?', 'When in doubt, C?']
+      },
+      q23: {
+        text: 'Someone says you have "great execution." Which inner monologue sounds the most like the one living in your skull?',
+        options: ['Only when the deadline is choking me.', 'Sometimes, I guess.', 'Yes. Things should move.']
+      },
+      q24: {
+        text: 'When I make plans, ____',
+        options: ['life usually outruns them.', 'sometimes I finish them, sometimes I do not.', 'I hate having them disrupted.']
+      },
+      q25: {
+        text: 'You got to know a bunch of internet mutuals from no-lifing Valorant, and now they want an IRL meetup. What is your first reaction?',
+        options: ['Online yapping is online yapping. Actually meeting them in the flesh? Yeah, that makes me a little nervous.', 'Meeting internet friends sounds fine. If somebody chats, I can chat back.', 'I would absolutely dress up a little and yap my head off. What if. I am just saying, what if.'],
+        note: 'Original was Identity V. I swapped in Valorant to keep that exact "met a weird little pack of mutuals through a game" feeling.'
+      },
+      q26: {
+        text: 'Your friend drags one of their own friends into the hangout. What mode do you enter?',
+        options: ['I instinctively keep a little distance from "my friend\'s friend."', 'Depends on them; if we click, we click.', 'A friend\'s friend is basically my friend too. Let\'s talk.']
+      },
+      q27: {
+        text: 'My whole social setup comes with an electric fence. Get too close and the alarm starts screaming.',
+        options: ['Agree', 'Neutral', 'Disagree']
+      },
+      q28: {
+        text: 'With people I trust, I do crave scary levels of closeness, like we are long-lost family who got reunited in a melodrama.',
+        options: ['Agree', 'Neutral', 'Disagree']
+      },
+      q29: {
+        text: 'Sometimes you have a darker or more negative take on something but swallow it instead of saying it. Usually that is because:',
+        options: ['That rarely happens to me.', 'I do not want to damage the mood or the relationship.', 'I do not want people to see my darker side.']
+      },
+      q30: {
+        text: 'I absolutely switch versions of myself depending on who is standing in front of me.',
+        options: ['Disagree', 'Neutral', 'Agree']
+      }
+    };
+
+    const QUESTION_GENDER_COPY = {
+      q1: {
+        male: {
+          zhText: '我不仅是屌丝，我还是joker,我还是咸鱼，这辈子没谈过一场恋爱，胆怯又自卑，我的青春就是一场又一场的意淫，每一天幻想着我也能有一个女孩子和我一起压马路，一起逛街，一起玩，现实却是爆了父母金币，读了个烂学校，混日子之后找班上，没有理想，没有目标，没有能力的三无人员，每次看到你能在网上开屌丝的玩笑，我都想哭，我就是地底下的老鼠，透过下水井的缝隙，窥探地上的各种美好，每一次看到这种都是对我心灵的一次伤害，对我生存空间的一次压缩，求求哥们给我们这种小丑一点活路吧，我真的不想在白天把枕巾哭湿一大片',
+          enText: 'Behold the full loser lament: broke, shy, romantically barren, drifting through a garbage-tier life while fantasizing that maybe one day a girl will actually walk around, shop, and hang out with me. Meanwhile I am a sewer rat peeking through the manhole at other people\'s happiness. How hard does this punch you in the soul?'
+        },
+        female: {
+          zhText: '我不仅是屌丝，我还是joker,我还是咸鱼，这辈子没谈过一场恋爱，胆怯又自卑，我的青春就是一场又一场的意淫，每一天幻想着我也能有一个男孩子和我一起压马路，一起逛街，一起玩，现实却是爆了父母金币，读了个烂学校，混日子之后找班上，没有理想，没有目标，没有能力的三无人员，每次看到你能在网上开屌丝的玩笑，我都想哭，我就是地底下的老鼠，透过下水井的缝隙，窥探地上的各种美好，每一次看到这种都是对我心灵的一次伤害，对我生存空间的一次压缩，求求哥们给我们这种小丑一点活路吧，我真的不想在白天把枕巾哭湿一大片',
+          enText: 'Behold the full loser lament: broke, shy, romantically barren, drifting through a garbage-tier life while fantasizing that maybe one day a guy will actually walk around, shop, and hang out with me. Meanwhile I am a sewer rat peeking through the manhole at other people\'s happiness. How hard does this punch you in the soul?'
+        }
+      },
+      q15: {
+        male: {
+          zhText: '快考试了，学校规定必须上晚自习，请假会扣分，但今晚你约了女神一起玩《绝地求生：刺激战场》（一款刺激的游戏），你怎么办？',
+          enText: 'Exams are near. School says evening study hall is mandatory and ditching it costs points, but tonight you promised to play a battle royale game with the girl you are into. What do you do?'
+        },
+        female: {
+          zhText: '快考试了，学校规定必须上晚自习，请假会扣分，但今晚你约了男神一起玩《绝地求生：刺激战场》（一款刺激的游戏），你怎么办？',
+          enText: 'Exams are near. School says evening study hall is mandatory and ditching it costs points, but tonight you promised to play a battle royale game with the guy you are into. What do you do?'
+        }
+      }
+    };
+
+    const SPECIAL_QUESTION_COPY = {
+      drink_gate_q1: {
+        text: 'What is one of your regular hobbies?',
+        options: ['Basic bodily maintenance.', 'Arts and culture stuff.', 'Drinking.', 'Working out.']
+      },
+      drink_gate_q2: {
+        text: 'What is your relationship with alcohol?',
+        options: ['I like a little, but not that much.', 'I could pour strong liquor into a thermos and drink it like water.']
+      }
+    };
+
+    const DIMENSION_COPY = {
+      S1: { name: 'S1 Self-regard', model: 'Self Model', L: 'You go at yourself harder than your enemies ever could. Compliment you twice and you will still want proof, witnesses, and lab results.', M: 'Your self-confidence runs on weather. Nice breeze and you take off. Slight headwind and you immediately crouch behind a shrub.', H: 'You more or less know your own weight. Some random idiot saying one sentence is not enough to blow you into powder.' },
+      S2: { name: 'S2 Self-clarity', model: 'Self Model', L: 'Your inner signal is snowy as hell. "Who am I?" is not a question for you. It is a loading screen.', M: 'Most days you can still recognize yourself, but every now and then your mood steals the microphone and starts freelancing.', H: 'Your temper, cravings, and bottom line are not exactly mysteries to you. You know what kind of creature you are.' },
+      S3: { name: 'S3 Core drive', model: 'Self Model', L: 'Comfort and safety sit on the throne. No need to put life on permanent sprint mode and explode your calves for no reason.', M: 'One half of you wants to rise and shine. The other half says rise later, shine never, lie down now.', H: 'Goals, growth, ambition, some sacred nonsense you believe in: these things can actually drag your body forward like a tractor beam.' },
+      E1: { name: 'E1 Attachment security', model: 'Emotion Model', L: 'Your relationship alarm system is ridiculous. One late reply and your brain has already produced a whole betrayal trilogy.', M: 'You wobble between trust and suspicion like a washing machine on a bad floor.', H: 'You are more willing to trust the bond itself. A tiny gust of weirdness does not send you straight into apocalypse mode.' },
+      E2: { name: 'E2 Emotional investment', model: 'Emotion Model', L: 'Your heart is not closed. It just has security guards, facial recognition, and three layers of approval.', M: 'You can invest, but you still keep an emergency exit in your back pocket in case this all goes to hell.', H: 'Once you are in, you are in. Feelings, energy, attention, all the good stuff goes in with both feet.' },
+      E3: { name: 'E3 Boundaries and dependence', model: 'Emotion Model', L: 'You are easier to stick to and easier to stick on. Warmth matters. Being needed matters. A little cling does not scare you.', M: 'You want closeness and room to breathe. Basically a custom slider, not a fixed setting.', H: 'Space matters a lot. Love is great, but if somebody starts breathing into your soul you are already backing up two steps.' },
+      A1: { name: 'A1 Worldview bias', model: 'Attitude Model', L: 'You look at the world through a defensive lens first. Suspicion clocks in before trust even finds parking.', M: 'You are not sweetly naive and not fully tinfoil either. You prefer to stand there with folded arms and watch.', H: 'You are more willing to believe people are not all garbage. The world does not get sentenced to death that quickly in your court.' },
+      A2: { name: 'A2 Rules and flexibility', model: 'Attitude Model', L: 'If a rule can be bent, dodged, or sweet-talked into silence, freedom usually wins.', M: 'You can behave, but you can also improvise. Depends on the scene, the stakes, and whether the rule is stupid.', H: 'Order does not annoy you. In fact, random pointless chaos kind of makes your soul itch.' },
+      A3: { name: 'A3 Sense of meaning', model: 'Attitude Model', L: 'Meaning levels are low. A lot of things feel like everyone is acting in a school play they forgot to rehearse.', M: 'Sometimes you have goals, sometimes you become a limp little sea creature floating through existence.', H: 'You usually have direction. Maybe not a sacred prophecy, but at least a rough arrow that says go that way, idiot.' },
+      Ac1: { name: 'Ac1 Motivation focus', model: 'Action Drive Model', L: 'Your anti-disaster system boots before ambition even gets out of bed.', M: 'Sometimes you want glory. Sometimes you just want nobody to email you.', H: 'Results, progress, movement, actual visible advancement: these things light a fire under you pretty fast.' },
+      Ac2: { name: 'Ac2 Decision style', model: 'Action Drive Model', L: 'Your internal meetings run long. Everybody has opinions. Nobody shuts up. The vote keeps getting delayed.', M: 'You think, but not all the way into blue screen territory.', H: 'You decide pretty fast and hate circling the drain once the choice is made.' },
+      Ac3: { name: 'Ac3 Execution mode', model: 'Action Drive Model', L: 'Your execution and deadlines are in a disgusting but passionate romance. The closer the cliff, the more alive you become.', M: 'You can get things done, but whether you do is heavily dependent on the alignment of the planets.', H: 'When something is not moving, it needles you. Stuff is supposed to land, not hover forever like a cursed progress bar.' },
+      So1: { name: 'So1 Social initiative', model: 'Social Model', L: 'Your social engine cold-starts like an old truck in winter. You can do it. You just need five business days.', M: 'If people come over, you can catch them. If nobody comes over, you are not exactly dying to force the issue.', H: 'You are more willing to open the conversation yourself and shove some life into the room.' },
+      So2: { name: 'So2 Interpersonal boundaries', model: 'Social Model', L: 'Once somebody gets into your trusted zone, you are fully capable of dragging them straight into the inner circle and feeding them soup.', M: 'You want closeness and distance in rotating proportions. It depends who is standing there and how annoying they are.', H: 'Your boundary system is pretty strong. If someone gets too close too fast, your soul quietly yells back up.' },
+      So3: { name: 'So3 Expression and authenticity', model: 'Social Model', L: 'You are more direct. If something is sitting in your chest, it tends to crawl out instead of staying there politely.', M: 'You usually split the difference between honesty and social survival.', H: 'You are good at switching versions of yourself depending on the room. Authenticity still exists, it just gets handed out in layers, not buckets.' }
+    };
+
+    const TYPE_COPY = {
+      CTRL: { name: 'The Handler', intro: 'See? I still got you.', desc: 'CTRL is not a person. CTRL is Ctrl+S with a heartbeat. Other people call it "rules"; you call it default settings. Other people say "plan"; you call it a quick doodle before the real work starts. When somebody else\'s life train is about to fly off the rails, CTRL appears out of nowhere, slaps the emergency archive button, and drags the whole disaster back onto the track with terrifying calm.' },
+      'ATM-er': { name: 'The Human ATM', intro: 'Do I look rich to you?', desc: 'ATM-er is not necessarily made of money, but somehow is always paying. Paying time. Paying patience. Paying attention. Paying for one more night of peace that was supposed to belong to them. People feed in panic and nonsense, and out comes "it\'s okay, I\'ve got it." Very noble. Also absolutely exhausting.', noteZh: '像 ATM 一样不断吐出支持和兜底，不一定有钱，但总在付出。', noteEn: 'The joke is simple: this type keeps dispensing support like an ATM that never gets to shut down.' },
+      'Dior-s': { name: 'The Barrel Philosopher', intro: 'Wait till my loser comeback hits.', desc: 'Dior-s is not merely a "loser." Dior-s is what happens when a chronically online self-own collides headfirst with Diogenes energy. They do not reject hustle because they are too weak to play. They reject it because they suspect the grand prize is just a shinier prison cell. While the crowd is chasing success and eating motivational poison, Dior-s is in a metaphorical barrel, sunbathing in the holy truth that lying down really is comfortable.', noteZh: '既借了“屌丝”的中文互联网自嘲，也硬拗成了 Diogenes 的 backronym。', noteEn: 'It riffs on diaosi, a Chinese self-mocking "loser" label, and forcefully shoves it into a Diogenes-flavored acronym.' },
+      BOSS: { name: 'The Wheel Snatcher', intro: 'Give me the wheel. Move.', desc: 'BOSS sees the world like somebody who has already cleared the game and is now bored by the tutorial. If there is a steering wheel within ten meters, they are grabbing it. If there is no steering wheel, they will probably build one. Efficiency is not just a preference here. It is an organ. They are the sort of person who hears "that sounds hard" and translates it into "excellent, let\'s begin."' },
+      'THAN-K': { name: 'The Gratitude Cult Leader', intro: 'I thank the heavens! I thank the dirt! I thank the traffic jam!', desc: 'THAN-K can wring gratitude out of mold, traffic, bad timing, and your ugly little emotional breakdown. Where normal people see nuisance, this creature sees a hidden blessing crouching in the corner holding a ring light. It is not ordinary optimism. It is industrial-grade spiritual overproduction. Give them a cracked wall and they will explain why the mildew is basically Van Gogh.' , noteZh: '把 thank 故意拆成键盘味代码，是一种半认真半玩梗的命名。', noteEn: 'A split-up "thank," styled like a keyboard mutant name.' },
+      'OH-NO': { name: 'The Disaster Prophet', intro: 'Oh no. Of course I got this one.', desc: 'OH-NO does not merely worry. OH-NO runs disaster simulations in 8K. A cup near the desk edge is not a cup. It is water stain, short circuit, spark, fire alarm, evacuation, financial loss, butterfly effect, civilization collapse. By the time everyone else is still smiling, OH-NO has already moved the cup, added a coaster, and mentally written the incident report.' },
+      GOGO: { name: 'The Immediate Action Department', intro: 'gogogo. We ride at dawn. Or now. Preferably now.', desc: 'GOGO lives in a world where seeing and doing are basically the same event. Other people are still debating theory, timing, and emotional readiness; GOGO has already kicked the door open and turned the task into a corpse. It is not that they solve every problem elegantly. It is that they refuse to let a to-do item keep breathing in peace.' },
+      SEXY: { name: 'The Menace', intro: 'You are not just attractive. You are an infrastructure issue.', desc: 'When SEXY walks into a room, the air quality changes. Attention starts misbehaving. Lighting starts acting weird. People who were minding their own business suddenly forget how bones work. This is less "good flirting technique" and more "dangerous natural resource." Even when they are not trying, their existence lands like a dramatic entrance cue.' },
+      'LOVE-R': { name: 'The Love Addict Saint', intro: 'Your love meter spilled everywhere again.', desc: 'LOVE-R is what happens when one human heart refuses to accept the dead little emotional economy of modern life. They feel too much, care too much, romanticize too hard, and continue doing all of that long after common sense has filed several complaints. Give them one falling leaf and they will manufacture a whole season of longing by sunset.' },
+      MUM: { name: 'The Primordial Mother', intro: 'Do I call you mom now or later?', desc: 'Somewhere before the stars were fully assembled, MUM was already there holding a blanket. This type is all warmth, intuition, and illegal levels of emotional first aid. They sense moods before the room itself does. They know when to comfort, when to stop, when to say "enough, drink water." Being looked after by a MUM type feels suspiciously like being restored from backup.' },
+      FAKE: { name: 'The Mask Switcher', intro: 'There may already be zero actual humans in here.', desc: 'FAKE changes faces faster than some people change keyboard input methods. Close friend mode, harmless coworker mode, respectable employee mode, warm soft person mode: click click click, all loaded. Is it manipulation? Sometimes. Is it survival? Also yes. Either way, the mask rack is enormous and fully operational.', noteEn: 'The original name hints at a "fake human," basically an uncanny social shapeshifter.' },
+      OJBK: { name: 'The Whatever Emperor', intro: 'When I say whatever, I mean whatever.', desc: 'OJBK is not indecisive. OJBK has simply transcended the peasant panic of choice. Rice or noodles? Sit by the window or the wall? Big deal. While ordinary citizens are burning glucose over micro-decisions, OJBK flicks a royal hand and says "all fine." This is not laziness. This is the philosophy of unbothered empire.', noteZh: 'OJBK 来自中文互联网对 OK 的戏谑写法，意思大概就是“都行、问题不大”。', noteEn: 'OJBK is a Chinese internet mutation of "OK," roughly meaning "whatever, it\'s fine, stop yelling."' },
+      MALO: { name: 'The Little Monkey Side Character', intro: 'Life is a dungeon run and I am some random monkey NPC.', desc: 'MALO never fully evolved into a serious adult with proper shame. There is still too much monkey in the system. Too much side-quest energy. Too much glorious low-end chaos. While the rest of humanity is trying to look polished and respectable, MALO is hanging off the branch of existence making weird noises and somehow still having more fun than everyone else.', noteZh: '吗喽是近年很常见的自嘲说法，像是“猴系小角色、低配打工人”的混合体。', noteEn: 'A very internet-native little-monkey self-own, somewhere between side character and scrappy underling.' },
+      'JOKE-R': { name: 'The Clown With No Final Layer', intro: 'Turns out we were all clowns after all.', desc: 'JOKE-R is a person wearing a joke wearing a joke wearing another joke. You peel one off, there is a second one. Peel again, a third. Keep going long enough and eventually you reach the center, where there should be some soft honest truth, and instead find a faint laugh echoing in an empty room. Great for social atmosphere. Less great for the soul.' },
+      'WOC!': { name: 'The Holy-Crap Person', intro: 'Holy crap. How did I get this one?', desc: 'WOC! has two operating systems. The front-end one goes "what the hell," "damn," "oh wow," and other loud noises every three seconds. The back-end one is a dead-serious analyst quietly muttering, yes, obviously, this tracks. They may sound startled, but they are rarely actually lost. The scream is decorative.', noteZh: 'WOC! 对应中文里很常见的惊叹词“卧槽”，差不多是随口一句“我去”。', noteEn: 'It echoes 卧槽, a very common Chinese "holy crap / whoa" reaction.' },
+      'THIN-K': { name: 'The Brain Courtroom', intro: 'Deep thinking has lasted 100 seconds and counting.', desc: 'THIN-K does not simply read a thing. THIN-K cross-examines it. Argument, evidence, hidden bias, source background, author motivation, possible family history of bullshit: everything gets dragged under the courtroom lights. In the age of fast nonsense, THIN-K is the annoying but necessary person still demanding receipts.' , noteZh: '把 think 故意拆开，做成一种带键盘感的代码名。', noteEn: 'A chopped-up "think" made to look like a weird little type code.' },
+      SHIT: { name: 'The Doomer Who Still Shows Up', intro: 'This world is one giant steaming disaster.', desc: 'SHIT talks like the end times are scheduled for Thursday. "This project is shit." "These coworkers are shit." "The subway is shit." "Reality itself is shit." Then, with tears in their eyes and curses in their mouth, they stay up late building the spreadsheet, fixing the disaster, and carrying the entire operation on their back anyway. What a foul-mouthed saint.' },
+      ZZZZ: { name: 'The Deadline Corpse', intro: 'I am not dead. I am conserving battery.', desc: 'ZZZZ can ignore 99 messages with the serenity of a fossil. But let one person yell "thirty minutes left" and the tomb lid slides open. Out they come, dusty but alive, mumbling "received" and somehow delivering something barely in time. For ZZZZ, the deadline is not a scheduling tool. It is necromancy.', noteEn: 'Yes, the code is basically a snoring sound.' },
+      POOR: { name: 'The Focus Goblin', intro: 'I am poor, but I drill hard.', desc: 'POOR is not always about wallet poverty. It is more like everyone else sprays attention around like a broken sprinkler while you compress yours into a mining laser. Outside noise gets muted. Pointless social glitter gets tossed. One thing gets chosen, and then you burrow into it like you owe the earth money.' },
+      MONK: { name: 'The Personal Space Monk', intro: 'No worldly desires. No sudden touching. Back up.', desc: 'MONK treats personal space like a sacred mountain wrapped in holy caution tape. They do not need constant closeness, and if you try to merge souls with them at high speed, you may feel the invisible barrier hit your forehead. This is not ice. This is a self-built temple with very strict visitor rules.' },
+      IMSB: { name: 'The Self-Insult Gladiator', intro: 'Be serious. Am I really that stupid?', desc: 'Inside IMSB live two immortal warriors. One screams, "Go! Ask them out! Charge into glory!" The other screams, "Why? So you can embarrass yourself in 4K?" Then they wrestle for three hours while the body remains motionless and the opportunity evaporates into the sky. IMSB is not actually stupid. The inner theater is just criminally loud.', noteZh: '既像英文里的 I\'m stupid，也贴着中文里更粗糙的自嘲说法。', noteEn: 'It sounds a bit like "I\'m stupid" while echoing a much ruder Chinese self-own.' },
+      SOLO: { name: 'The Thorny Little King', intro: 'I am crying. Why am I this lonely bastard?', desc: 'SOLO builds the wall first and asks questions later. The self-worth is a bit shaky, the fear of abandonment is very real, and so the soul grows spikes like a frightened hedgehog running a small kingdom of hurt feelings. Those spikes are not there because SOLO loves hurting people. They are there because SOLO has been hit before.' },
+      FUCK: { name: 'The Untamable Weed', intro: 'What the hell kind of type is this?', desc: 'FUCK is a human weed. The type of thing civilization keeps trying to mow down and civilize, only for it to kick through the concrete again by next Tuesday. Rules do not stick well. Emotion arrives like a toggle switch between HELL YES and HELL NO. Politeness loses. Raw life-force wins.' },
+      DEAD: { name: 'The Numb Old Ghost', intro: 'Am I even alive or just on very low power mode?', desc: 'DEAD has stared into desire, ambition, meaning, and all the other supposedly important things for so long that the reward center has started smoking. This type looks at life like a max-level player who cleared every quest, every side quest, every hidden dungeon, then discovered the game was still kind of boring. Grim? Yes. Also weirdly serene.', noteZh: '作者在原文里还给它补了个 backronym：Don\'t Expect Any Drives。', noteEn: 'The original text even gifts it a backronym: "Don\'t Expect Any Drives."' },
+      IMFW: { name: 'The Extremely Soft Disaster', intro: 'Am I really... that useless?', desc: 'IMFW is not pure trash. IMFW is more like a rare greenhouse orchid with catastrophic survival instincts. Too trusting, too easy to wound, too ready to treat one reliable person as the strongest Wi-Fi signal in the room and connect instantly. Give them warmth and they glow. Give them coldness and they fold up like wet paper.', noteZh: '像是在说“I\'m 废物”，故意把中文自嘲塞进英文外壳里。', noteEn: 'It sounds like "I\'m useless" while keeping the sting of the original Chinese self-drag.' },
+      HHHH: { name: 'The System-Lagged Laughing Stock', intro: 'Hahahahahahaha.', desc: 'HHHH only appears when the whole type library looks at your pattern, blinks twice, and says no, sorry, absolutely not. Your brain wiring is too slippery for the standard shelves, so the system panics, starts laughing, and throws you in the emergency bin labeled HHHH. Congratulations. Or condolences. Hard to say.', noteZh: '纯粹是笑声，意思大概是“系统也不知道怎么判你了，只能先笑”。', noteEn: 'It is basically helpless laughter. The system does not know what to do with you and has chosen giggling as a defense mechanism.' },
+      DRUNK: { name: 'The Human Liquor Thermos', intro: 'Liquor burns the throat. Fate says keep drinking.', desc: 'DRUNK is what happens when ethanol storms the control room, elbows everyone aside, and declares martial law. Suddenly the body sways, the soul gets loud, the confidence triples, and the person briefly mistakes themselves for the flaming center of the universe. Then morning arrives, carrying headache, regret, and the horrifying realization that yes, the thermos probably should not have contained baijiu.' }
+    };
+
+    const AUTHOR_PARAGRAPHS = [
+      copy('本测试首发于b站up主蛆肉儿串儿（UID417038183），初衷是劝诫一位爱喝酒的朋友戒酒。', 'This thing was first thrown onto Bilibili by 蛆肉儿串儿, and the original mission was simply to bully one liquor-loving friend into drinking less.'),
+      copy('由于作者的人格是SHIT愤世者，所以平等的攻击了各位，在此抱歉！！不过我是一个绝世大美女，你们一定会原谅我，有B站的朋友们也可以关注我。', 'Because the creator is spiritually a SHIT type, everybody got roasted equally. Sorry about that. Also, she insists she is a once-in-an-era beauty, so obviously forgiveness should be automatic.'),
+      copy('关于这个测试，我没法很好的平衡娱乐和专业性，因此对于一些人格的阐释较为模糊或完全不准（如屌丝可能并非真的屌丝），如有冒犯非常抱歉！！', 'I never managed to balance "funny" and "scientific" properly, so some of these type readings are blurry, rude, or straight-up inaccurate. If one of them punches you in the face, please take it as comedy before anything else.'),
+      copy('再鉴于时间精力有限，就随便搞了一个先这样玩玩，后续会慢慢完善修改的，总之好玩为主，还请不要用于盈利呀。', 'Also I made this in a hurry, with limited energy and even more limited self-control, so for now it is mostly a chaotic toy. I may keep fixing it later. Please do not turn it into a money-printing machine.')
+    ];
+
+    const LEVEL_COPY = {
+      L: copy('低', 'Low'),
+      M: copy('中', 'Mid'),
+      H: copy('高', 'High')
+    };
+
     const DRUNK_TRIGGER_QUESTION_ID = 'drink_gate_q2';
 
     const app = {
+      language: 'zh',
+      gender: 'unspecified',
       shuffledQuestions: [],
       answers: {},
       previewMode: false
@@ -1490,6 +1977,101 @@
     const progressText = document.getElementById('progressText');
     const submitBtn = document.getElementById('submitBtn');
     const testHint = document.getElementById('testHint');
+    const authorBox = document.getElementById('authorBox');
+    const authorToggleLabel = document.getElementById('authorToggleLabel');
+
+    function escapeHtml(value = '') {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function renderCopy(item, { inline = false } = {}) {
+      const zh = escapeHtml(item?.zh ?? '');
+      const en = escapeHtml(item?.en ?? item?.zh ?? '');
+      const noteZh = escapeHtml(item?.noteZh ?? '');
+      const noteEn = escapeHtml(item?.noteEn ?? '');
+
+      if (inline) {
+        if (app.language === 'zh') return zh;
+        if (app.language === 'en') return en;
+        return `${zh} <span class="inline-secondary">/ ${en}</span>`;
+      }
+
+      const pieces = [];
+      pieces.push(`<span class="copy-primary">${app.language === 'en' ? en : zh}</span>`);
+      if (app.language === 'bi') {
+        pieces.push(`<span class="copy-secondary">${en}</span>`);
+      }
+      const note = app.language === 'zh' ? noteZh : noteEn;
+      if (note) {
+        pieces.push(`<span class="copy-note">${note}</span>`);
+      }
+      return `<span class="copy-stack">${pieces.join('')}</span>`;
+    }
+
+    function setCopy(id, item, inline = false) {
+      document.getElementById(id).innerHTML = renderCopy(item, { inline });
+    }
+
+    function getDocumentTitle() {
+      if (app.language === 'en') return 'SBTI Personality Test';
+      if (app.language === 'bi') return 'SBTI 人格测试 / Personality Test';
+      return 'SBTI 人格测试';
+    }
+
+    function formatTypeName(type) {
+      const englishName = TYPE_COPY[type.code]?.name || type.cn;
+      if (app.language === 'en') return `${type.code} (${englishName})`;
+      if (app.language === 'bi') return `${type.code}（${type.cn} / ${englishName}）`;
+      return `${type.code}（${type.cn}）`;
+    }
+
+    function getTypeNote(typeCode) {
+      const noteZh = TYPE_COPY[typeCode]?.noteZh || '';
+      const noteEn = TYPE_COPY[typeCode]?.noteEn || '';
+      if (!noteZh && !noteEn) return '';
+      return renderCopy(copy(noteZh, noteEn));
+    }
+
+    function getTypeIntro(type) {
+      return copy(type.intro, TYPE_COPY[type.code]?.intro || type.intro);
+    }
+
+    function getTypeDesc(type) {
+      return copy(type.desc, TYPE_COPY[type.code]?.desc || type.desc);
+    }
+
+    function getDimensionName(dim) {
+      return copy(dimensionMeta[dim].name, DIMENSION_COPY[dim]?.name || dimensionMeta[dim].name);
+    }
+
+    function getDimensionExplanation(dim, level) {
+      return copy(DIM_EXPLANATIONS[dim][level], DIMENSION_COPY[dim]?.[level] || DIM_EXPLANATIONS[dim][level]);
+    }
+
+    function getQuestionSource(q) {
+      return q.special ? SPECIAL_QUESTION_COPY[q.id] : QUESTION_COPY[q.id];
+    }
+
+    function getQuestionText(q) {
+      const base = getQuestionSource(q);
+      const genderVariant = QUESTION_GENDER_COPY[q.id]?.[app.gender];
+      return copy(
+        genderVariant?.zhText || q.text,
+        genderVariant?.enText || base?.text || q.text,
+        '',
+        base?.note || ''
+      );
+    }
+
+    function getQuestionOptionCopy(q, index, fallbackLabel) {
+      const base = getQuestionSource(q);
+      return copy(fallbackLabel, base?.options?.[index] || fallbackLabel);
+    }
 
     function showScreen(name) {
       Object.entries(screens).forEach(([key, el]) => {
@@ -1517,8 +2099,119 @@
     }
 
     function getQuestionMetaLabel(q) {
-      if (q.special) return '补充题';
-      return app.previewMode ? dimensionMeta[q.dim].name : '维度已隐藏';
+      if (q.special) return UI_TEXT.supplementalQuestion;
+      if (app.previewMode) return getDimensionName(q.dim);
+      return UI_TEXT.hiddenDimension;
+    }
+
+    function renderLanguageOptions() {
+      const container = document.getElementById('languageOptions');
+      container.innerHTML = LANGUAGE_OPTIONS.map(option => `
+        <button
+          type="button"
+          class="choice-chip ${app.language === option.value ? 'selected' : ''}"
+          data-language="${option.value}"
+          aria-pressed="${app.language === option.value}"
+        >
+          <div class="choice-title">${escapeHtml(option.titleZh)}</div>
+          <div class="choice-subtitle">${escapeHtml(option.titleEn)}</div>
+        </button>
+      `).join('');
+
+      container.querySelectorAll('[data-language]').forEach(button => {
+        button.addEventListener('click', () => {
+          app.language = button.dataset.language;
+          syncLocalizedChrome();
+        });
+      });
+    }
+
+    function renderGenderOptions() {
+      const container = document.getElementById('genderOptions');
+      container.innerHTML = GENDER_OPTIONS.map(option => `
+        <button
+          type="button"
+          class="choice-chip ${app.gender === option.value ? 'selected' : ''}"
+          data-gender="${option.value}"
+          aria-pressed="${app.gender === option.value}"
+        >
+          <span class="choice-title">${escapeHtml(option.titleZh)}</span>
+          <span class="choice-subtitle">${escapeHtml(option.titleEn)}</span>
+        </button>
+      `).join('');
+
+      container.querySelectorAll('[data-gender]').forEach(button => {
+        button.addEventListener('click', () => {
+          app.gender = button.dataset.gender;
+          syncLocalizedChrome();
+        });
+      });
+    }
+
+    function setIntroMeta() {
+      const authorLine = document.getElementById('authorMetaLine');
+      const hostingLine = document.getElementById('hostingMetaLine');
+      const domainLine = document.getElementById('domainMetaLine');
+
+      if (app.language === 'en') {
+        authorLine.innerHTML = 'Original creator: <a href="https://space.bilibili.com/417038183">Bilibili @蛆肉儿串儿</a>';
+        hostingLine.textContent = 'Hosting: Cloudflare (free tier)';
+        domainLine.textContent = 'Domain: Spaceship (paid personally)';
+      } else if (app.language === 'bi') {
+        authorLine.innerHTML = '原作者 / Original creator: <a href="https://space.bilibili.com/417038183">B站 / Bilibili @蛆肉儿串儿</a>';
+        hostingLine.textContent = '托管 / Hosting: Cloudflare (免费 / free tier)';
+        domainLine.textContent = '域名 / Domain: Spaceship (自费 / paid personally)';
+      } else {
+        authorLine.innerHTML = '原作者：<a href="https://space.bilibili.com/417038183">B站@蛆肉儿串儿</a>';
+        hostingLine.textContent = '托管：Cloudflare (免费)';
+        domainLine.textContent = '域名：Spaceship (自费)';
+      }
+    }
+
+    function renderAuthorContent() {
+      document.getElementById('authorContent').innerHTML = AUTHOR_PARAGRAPHS
+        .map(item => `<p>${renderCopy(item)}</p>`)
+        .join('');
+    }
+
+    function updateAuthorToggle() {
+      authorToggleLabel.innerHTML = renderCopy(authorBox.open ? UI_TEXT.authorToggleClose : UI_TEXT.authorToggleOpen, { inline: true });
+    }
+
+    function syncLocalizedChrome() {
+      document.documentElement.lang = app.language === 'en' ? 'en' : 'zh-CN';
+      document.body.dataset.languageMode = app.language;
+      document.title = getDocumentTitle();
+
+      setCopy('introTitle', UI_TEXT.introTitle);
+      setCopy('introSub', UI_TEXT.introSub);
+      setCopy('languageLabel', UI_TEXT.languageLabel, true);
+      setCopy('genderLabel', UI_TEXT.genderLabel, true);
+      setCopy('genderHint', UI_TEXT.genderHint);
+      setCopy('startBtn', UI_TEXT.startBtn, true);
+      setCopy('backIntroBtn', UI_TEXT.backIntroBtn, true);
+      setCopy('submitBtn', UI_TEXT.submitBtn, true);
+      setCopy('restartBtn', UI_TEXT.restartBtn, true);
+      setCopy('toTopBtn', UI_TEXT.toTopBtn, true);
+      setCopy('analysisTitle', UI_TEXT.analysisTitle, true);
+      setCopy('dimensionTitle', UI_TEXT.dimensionTitle, true);
+      setCopy('noteTitle', UI_TEXT.noteTitle, true);
+      setCopy('authorSummary', UI_TEXT.authorSummary, true);
+
+      setIntroMeta();
+      renderAuthorContent();
+      updateAuthorToggle();
+      renderLanguageOptions();
+      renderGenderOptions();
+
+      if (screens.test.classList.contains('active')) {
+        renderQuestions();
+      } else {
+        updateProgress();
+      }
+      if (screens.result.classList.contains('active')) {
+        renderResult();
+      }
     }
 
     function renderQuestions() {
@@ -1527,12 +2220,13 @@
       visibleQuestions.forEach((q, index) => {
         const card = document.createElement('article');
         card.className = 'question';
+        const questionCopy = getQuestionText(q);
         card.innerHTML = `
           <div class="question-meta">
-            <div class="badge">第 ${index + 1} 题</div>
-            <div>${getQuestionMetaLabel(q)}</div>
+            <div class="badge">${app.language === 'en' ? `Question ${index + 1}` : app.language === 'bi' ? `第 ${index + 1} 题 <span class="inline-secondary">/ Question ${index + 1}</span>` : `第 ${index + 1} 题`}</div>
+            <div>${renderCopy(getQuestionMetaLabel(q), { inline: true })}</div>
           </div>
-          <div class="question-title">${q.text}</div>
+          <div class="question-title">${renderCopy(questionCopy)}</div>
           <div class="options">
             ${q.options.map((opt, i) => {
               const code = ['A', 'B', 'C', 'D'][i] || String(i + 1);
@@ -1541,7 +2235,7 @@
                 <label class="option">
                   <input type="radio" name="${q.id}" value="${opt.value}" ${checked} />
                   <div class="option-code">${code}</div>
-                  <div>${opt.label}</div>
+                  <div>${renderCopy(getQuestionOptionCopy(q, i, opt.label))}</div>
                 </label>
               `;
             }).join('')}
@@ -1551,8 +2245,8 @@
       });
 
       questionList.querySelectorAll('input[type="radio"]').forEach(input => {
-        input.addEventListener('change', (e) => {
-          const { name, value } = e.target;
+        input.addEventListener('change', (event) => {
+          const { name, value } = event.target;
           app.answers[name] = Number(value);
 
           if (name === 'drink_gate_q1') {
@@ -1579,9 +2273,7 @@
       progressText.textContent = `${done} / ${total}`;
       const complete = done === total && total > 0;
       submitBtn.disabled = !complete;
-      testHint.textContent = complete
-        ? '都做完了。现在可以把你的电子魂魄交给结果页审判。'
-        : '全选完才会放行。世界已经够乱了，起码把题做完整。';
+      testHint.innerHTML = renderCopy(complete ? UI_TEXT.testHintComplete : UI_TEXT.testHintPending);
     }
 
     function sumToLevel(score) {
@@ -1637,24 +2329,24 @@
       const drunkTriggered = getDrunkTriggered();
 
       let finalType;
-      let modeKicker = '你的主类型';
-      let badge = `匹配度 ${bestNormal.similarity}% · 精准命中 ${bestNormal.exact}/15 维`;
-      let sub = '维度命中度较高，当前结果可视为你的第一人格画像。';
+      let modeKicker = UI_TEXT.mainType;
+      let badge = copy(`匹配度 ${bestNormal.similarity}% · 精准命中 ${bestNormal.exact}/15 维`, `Match ${bestNormal.similarity}% · exact hit ${bestNormal.exact}/15 tiny dimensions`);
+      let sub = copy('维度命中度相当高，八九不离十，这大概就是你的人格鬼样子。', 'The fifteen dimensions all pointed here with suspicious confidence, so yes, this is probably your spiritual mugshot.');
       let special = false;
       let secondaryType = null;
 
       if (drunkTriggered) {
         finalType = TYPE_LIBRARY.DRUNK;
         secondaryType = bestNormal;
-        modeKicker = '隐藏人格已激活';
-        badge = '匹配度 100% · 酒精异常因子已接管';
-        sub = '乙醇亲和性过强，系统已直接跳过常规人格审判。';
+        modeKicker = UI_TEXT.hiddenType;
+        badge = copy('匹配度 100% · 酒精异常因子已接管', '100% match · alcohol override has seized the throne');
+        sub = copy('乙醇亲和性过强，系统当场滑跪，常规人格审判直接被踢下台。', 'Your alcohol affinity was so outrageous the normal type system got kicked offstage on the spot.');
         special = true;
       } else if (bestNormal.similarity < 60) {
         finalType = TYPE_LIBRARY.HHHH;
-        modeKicker = '系统强制兜底';
-        badge = `标准人格库最高匹配仅 ${bestNormal.similarity}%`;
-        sub = '标准人格库对你的脑回路集体罢工了，于是系统把你强制分配给了 HHHH。';
+        modeKicker = UI_TEXT.fallbackType;
+        badge = copy(`标准人格库最高匹配仅 ${bestNormal.similarity}%`, `Best standard type only limped to ${bestNormal.similarity}%`);
+        sub = copy('标准人格库看了你的脑回路三秒钟，集体沉默，然后把你一脚踢进了 HHHH。', 'The standard type library stared at your brain wiring in total silence, then shoved you into HHHH and called it a day.');
         special = true;
       } else {
         finalType = bestNormal;
@@ -1674,18 +2366,23 @@
       };
     }
 
+    function formatLevelScore(level, score) {
+      if (app.language === 'en') return `${LEVEL_COPY[level].en} / ${score} pts`;
+      if (app.language === 'bi') return `${LEVEL_COPY[level].zh} ${LEVEL_COPY[level].en} / ${score}分`;
+      return `${LEVEL_COPY[level].zh} / ${score}分`;
+    }
+
     function renderDimList(result) {
       const dimList = document.getElementById('dimList');
       dimList.innerHTML = dimensionOrder.map(dim => {
         const level = result.levels[dim];
-        const explanation = DIM_EXPLANATIONS[dim][level];
         return `
           <div class="dim-item">
             <div class="dim-item-top">
-              <div class="dim-item-name">${dimensionMeta[dim].name}</div>
-              <div class="dim-item-score">${level} / ${result.rawScores[dim]}分</div>
+              <div class="dim-item-name">${renderCopy(getDimensionName(dim))}</div>
+              <div class="dim-item-score">${escapeHtml(formatLevelScore(level, result.rawScores[dim]))}</div>
             </div>
-            <p>${explanation}</p>
+            <p>${renderCopy(getDimensionExplanation(dim, level))}</p>
           </div>
         `;
       }).join('');
@@ -1695,22 +2392,21 @@
       const result = computeResult();
       const type = result.finalType;
 
-      document.getElementById('resultModeKicker').textContent = result.modeKicker;
-      document.getElementById('resultTypeName').textContent = `${type.code}（${type.cn}）`;
-      document.getElementById('matchBadge').textContent = result.badge;
-      document.getElementById('resultTypeSub').textContent = result.sub;
-      document.getElementById('resultDesc').textContent = type.desc;
-      document.getElementById('posterCaption').textContent = type.intro;
-      document.getElementById('funNote').textContent = result.special
-        ? '本测试仅供娱乐。隐藏人格和傻乐兜底都属于作者故意埋的损招，请勿把它当成医学、心理学、相学、命理学或灵异学依据。'
-        : '本测试仅供娱乐，别拿它当诊断、面试、相亲、分手、招魂、算命或人生判决书。你可以笑，但别太当真。';
+      document.getElementById('resultModeKicker').innerHTML = renderCopy(result.modeKicker, { inline: true });
+      document.getElementById('resultTypeName').textContent = formatTypeName(type);
+      document.getElementById('matchBadge').innerHTML = renderCopy(result.badge, { inline: true });
+      document.getElementById('resultTypeSub').innerHTML = renderCopy(result.sub);
+      document.getElementById('resultTypeNote').innerHTML = getTypeNote(type.code);
+      document.getElementById('resultDesc').innerHTML = renderCopy(getTypeDesc(type));
+      document.getElementById('posterCaption').innerHTML = renderCopy(getTypeIntro(type));
+      document.getElementById('funNote').innerHTML = renderCopy(result.special ? UI_TEXT.specialFunNote : UI_TEXT.normalFunNote);
 
       const posterBox = document.getElementById('posterBox');
       const posterImage = document.getElementById('posterImage');
       const imageSrc = TYPE_IMAGES[type.code];
       if (imageSrc) {
         posterImage.src = imageSrc;
-        posterImage.alt = `${type.code}（${type.cn}）`;
+        posterImage.alt = formatTypeName(type);
         posterBox.classList.remove('no-image');
       } else {
         posterImage.removeAttribute('src');
@@ -1741,6 +2437,9 @@
     document.getElementById('submitBtn').addEventListener('click', renderResult);
     document.getElementById('restartBtn').addEventListener('click', () => startTest(false));
     document.getElementById('toTopBtn').addEventListener('click', () => showScreen('intro'));
+    authorBox.addEventListener('toggle', updateAuthorToggle);
+
+    syncLocalizedChrome();
   </script>
 
 </body>
