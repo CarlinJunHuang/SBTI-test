@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sbti-test-sigma-flax.vercel.app/sitemap.xml

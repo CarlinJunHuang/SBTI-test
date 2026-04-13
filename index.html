@@ -3,7 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SBTI 人格测试</title>
+  <title>SBTI 人格测试 | 中文原版 / Bilingual / English</title>
+  <meta name="description" content="MBTI已经过时，SBTI来了。保留原题中文互联网气质的多语言 SBTI 人格测试，支持中文原版、中英对照和纯英文。 A multilingual adaptation of the viral SBTI personality test with original Chinese, bilingual, and English modes." />
+  <meta name="keywords" content="SBTI,SBTI测试,SBTI人格测试,SBTI personality test,personality test,Chinese internet culture,bilingual,English version,多语言,人格测试" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="theme-color" content="#f6faf6" />
+  <meta name="author" content="原作：蛆肉儿串儿；多语言衍生：CarlinJunHuang" />
+  <link rel="canonical" id="canonicalLink" href="https://sbti-test-sigma-flax.vercel.app/" />
+  <link rel="alternate" id="alternateZh" hreflang="zh-CN" href="https://sbti-test-sigma-flax.vercel.app/?lang=zh" />
+  <link rel="alternate" id="alternateEn" hreflang="en" href="https://sbti-test-sigma-flax.vercel.app/?lang=en" />
+  <link rel="alternate" id="alternateDefault" hreflang="x-default" href="https://sbti-test-sigma-flax.vercel.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SBTI 人格测试" />
+  <meta property="og:locale" id="ogLocale" content="zh_CN" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:title" id="ogTitle" content="SBTI 人格测试 | 中文原版 / Bilingual / English" />
+  <meta property="og:description" id="ogDescription" content="保留原题气质的多语言 SBTI 人格测试：中文原版、中英对照、纯英文三种模式都在同一个入口里。" />
+  <meta property="og:url" id="ogUrl" content="https://sbti-test-sigma-flax.vercel.app/" />
+  <meta property="og:image" content="https://sbti-test-sigma-flax.vercel.app/image/CTRL.png" />
+  <meta property="og:image:alt" content="SBTI personality test preview poster" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="twitterTitle" content="SBTI 人格测试 | 中文原版 / Bilingual / English" />
+  <meta name="twitter:description" id="twitterDescription" content="A multilingual adaptation of the viral SBTI personality test with Chinese, bilingual, and English modes." />
+  <meta name="twitter:image" content="https://sbti-test-sigma-flax.vercel.app/image/CTRL.png" />
+  <script type="application/ld+json" id="structuredData">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SBTI 人格测试",
+      "alternateName": "SBTI Personality Test",
+      "url": "https://sbti-test-sigma-flax.vercel.app/",
+      "description": "保留原题中文互联网气质的多语言 SBTI 人格测试，支持中文原版、中英对照和纯英文。",
+      "inLanguage": ["zh-CN", "en"],
+      "keywords": ["SBTI", "SBTI测试", "SBTI人格测试", "SBTI personality test", "bilingual", "English version"],
+      "isBasedOn": "https://sbti.unun.dev",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "蛆肉儿串儿"
+        },
+        {
+          "@type": "Person",
+          "name": "CarlinJunHuang"
+        }
+      ]
+    }
+  </script>
   <style>
     :root {
       --bg: #f6faf6;
@@ -120,6 +165,34 @@
       color: var(--muted);
       font-size: 12px;
       line-height: 1.7;
+    }
+
+    .hero-meta {
+      padding-top: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-meta-line {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .hero-meta-line a,
+    .intro-trust a {
+      color: inherit;
+      text-underline-offset: 2px;
+    }
+
+    .intro-trust {
+      max-width: 720px;
+      color: #7b877f;
+      font-size: 11px;
+      line-height: 1.75;
     }
 
     .choice-row {
@@ -890,13 +963,14 @@
           <button id="startBtn" class="btn-primary">开始测试</button>
         </div>
 
-        <div style="padding-top: 1.75rem; display: flex; flex-direction: column; gap: 6px; align-items: center;">
-          <span id="authorMetaLine">
+        <div class="hero-meta">
+          <span id="authorMetaLine" class="hero-meta-line">
             原作者：
-            <a href="https://space.bilibili.com/417038183">B站@蛆肉儿串儿</a>
+            <a href="https://space.bilibili.com/417038183" rel="noreferrer" target="_blank">B站@蛆肉儿串儿</a>
           </span>
-          <span id="hostingMetaLine">托管：Cloudflare (免费)</span>
-          <span id="domainMetaLine">域名：Spaceship (自费)</span>
+          <span id="hostingMetaLine" class="hero-meta-line">托管：Cloudflare (免费)</span>
+          <span id="domainMetaLine" class="hero-meta-line">域名：Spaceship (自费)</span>
+          <span id="introTrustNote" class="intro-trust">和原题体验保持一致，这里只做了多语化衍生。项目仓库在这。</span>
         </div>
       </div>
     </section>
@@ -1666,6 +1740,30 @@
   }
 };
     const dimensionOrder = ['S1','S2','S3','E1','E2','E3','A1','A2','A3','Ac1','Ac2','Ac3','So1','So2','So3'];
+    const SITE_URL = 'https://sbti-test-sigma-flax.vercel.app';
+    const REPO_URL = 'https://github.com/CarlinJunHuang/SBTI-test';
+    const DEFAULT_LANGUAGE = 'zh';
+    const DEFAULT_GENDER = 'unspecified';
+    const VALID_LANGUAGES = ['zh', 'bi', 'en'];
+    const VALID_GENDERS = ['unspecified', 'male', 'female'];
+
+    const SEO_COPY = {
+      zh: {
+        title: 'SBTI 人格测试 | 中文原版、多语言衍生版',
+        description: 'MBTI已经过时，SBTI来了。保留原题中文互联网气质的多语言 SBTI 人格测试，支持中文原版、中英对照和纯英文三种模式。',
+        keywords: 'SBTI,SBTI测试,SBTI人格测试,人格测试,多语言,中文互联网,英文版,中英对照'
+      },
+      bi: {
+        title: 'SBTI 人格测试 / SBTI Personality Test | 中英对照版',
+        description: '保留原题中文互联网气质的 SBTI 多语言版本。中文主导，附自然英文，也能一键切到纯英文。 A bilingual edition of the viral SBTI personality test.',
+        keywords: 'SBTI,SBTI测试,SBTI personality test,bilingual,Chinese English,中英对照,多语言,personality test'
+      },
+      en: {
+        title: 'SBTI Personality Test | Original Chinese, Bilingual, and English Modes',
+        description: 'A multilingual adaptation of the viral SBTI personality test, with original Chinese mode, bilingual Chinese-English mode, and a full English mode.',
+        keywords: 'SBTI,SBTI personality test,personality test,bilingual,Chinese internet culture,English version,multilingual quiz'
+      }
+    };
 
     function copy(zh, en, noteZh = '', noteEn = '') {
       return { zh, en, noteZh, noteEn };
@@ -1959,8 +2057,8 @@
     const DRUNK_TRIGGER_QUESTION_ID = 'drink_gate_q2';
 
     const app = {
-      language: 'zh',
-      gender: 'unspecified',
+      language: DEFAULT_LANGUAGE,
+      gender: DEFAULT_GENDER,
       shuffledQuestions: [],
       answers: {},
       previewMode: false
@@ -2018,9 +2116,104 @@
     }
 
     function getDocumentTitle() {
-      if (app.language === 'en') return 'SBTI Personality Test';
-      if (app.language === 'bi') return 'SBTI 人格测试 / Personality Test';
-      return 'SBTI 人格测试';
+      return SEO_COPY[app.language]?.title || SEO_COPY.zh.title;
+    }
+
+    function getCanonicalHref() {
+      const url = new URL(SITE_URL);
+      if (app.language !== DEFAULT_LANGUAGE) {
+        url.searchParams.set('lang', app.language);
+      }
+      return url.toString();
+    }
+
+    function syncUrlState() {
+      const url = new URL(window.location.href);
+      if (app.language === DEFAULT_LANGUAGE) {
+        url.searchParams.delete('lang');
+      } else {
+        url.searchParams.set('lang', app.language);
+      }
+
+      if (app.gender === DEFAULT_GENDER) {
+        url.searchParams.delete('gender');
+      } else {
+        url.searchParams.set('gender', app.gender);
+      }
+
+      const next = `${url.pathname}${url.search}${url.hash}`;
+      const current = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+      if (next !== current) {
+        window.history.replaceState({}, '', next);
+      }
+    }
+
+    function applyUrlState() {
+      const params = new URLSearchParams(window.location.search);
+      const lang = params.get('lang');
+      const gender = params.get('gender');
+
+      if (VALID_LANGUAGES.includes(lang)) {
+        app.language = lang;
+      }
+      if (VALID_GENDERS.includes(gender)) {
+        app.gender = gender;
+      }
+    }
+
+    function updateStructuredData(seo) {
+      const payload = {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: app.language === 'en' ? 'SBTI Personality Test' : 'SBTI 人格测试',
+        alternateName: 'SBTI Personality Test',
+        url: SITE_URL,
+        description: seo.description,
+        inLanguage: app.language === 'en' ? ['en', 'zh-CN'] : ['zh-CN', 'en'],
+        keywords: seo.keywords.split(',').map(item => item.trim()).filter(Boolean),
+        isBasedOn: 'https://sbti.unun.dev',
+        creator: [
+          { '@type': 'Person', name: '蛆肉儿串儿' },
+          { '@type': 'Person', name: 'CarlinJunHuang' }
+        ]
+      };
+
+      document.getElementById('structuredData').textContent = JSON.stringify(payload);
+    }
+
+    function updateSeoMeta() {
+      const seo = SEO_COPY[app.language] || SEO_COPY.zh;
+      const canonical = getCanonicalHref();
+
+      document.documentElement.lang = app.language === 'en' ? 'en' : 'zh-CN';
+      document.title = getDocumentTitle();
+
+      document.querySelector('meta[name="description"]').setAttribute('content', seo.description);
+      document.querySelector('meta[name="keywords"]').setAttribute('content', seo.keywords);
+
+      document.getElementById('canonicalLink').setAttribute('href', canonical);
+      document.getElementById('alternateZh').setAttribute('href', `${SITE_URL}/?lang=zh`);
+      document.getElementById('alternateEn').setAttribute('href', `${SITE_URL}/?lang=en`);
+      document.getElementById('alternateDefault').setAttribute('href', `${SITE_URL}/`);
+
+      document.getElementById('ogLocale').setAttribute('content', app.language === 'en' ? 'en_US' : 'zh_CN');
+      document.getElementById('ogTitle').setAttribute('content', seo.title);
+      document.getElementById('ogDescription').setAttribute('content', seo.description);
+      document.getElementById('ogUrl').setAttribute('content', canonical);
+      document.getElementById('twitterTitle').setAttribute('content', seo.title);
+      document.getElementById('twitterDescription').setAttribute('content', seo.description);
+
+      updateStructuredData(seo);
+    }
+
+    function setIntroTrustNote() {
+      const text = app.language === 'en'
+        ? 'Same test energy as the original. This version only adds multilingual support.'
+        : app.language === 'bi'
+          ? '和原题体验保持一致，这里只做了多语化衍生。 / Same vibe as the original, just multilingual.'
+          : '和原题体验保持一致，这里只做了多语化衍生。';
+      const repoLabel = app.language === 'en' ? 'Repo' : app.language === 'bi' ? 'Repo' : '项目仓库';
+      document.getElementById('introTrustNote').innerHTML = `${escapeHtml(text)} <a href="${REPO_URL}" rel="noreferrer" target="_blank">${escapeHtml(repoLabel)}</a>`;
     }
 
     function formatTypeName(type) {
@@ -2179,9 +2372,9 @@
     }
 
     function syncLocalizedChrome() {
-      document.documentElement.lang = app.language === 'en' ? 'en' : 'zh-CN';
+      syncUrlState();
       document.body.dataset.languageMode = app.language;
-      document.title = getDocumentTitle();
+      updateSeoMeta();
 
       setCopy('introTitle', UI_TEXT.introTitle);
       setCopy('introSub', UI_TEXT.introSub);
@@ -2199,6 +2392,7 @@
       setCopy('authorSummary', UI_TEXT.authorSummary, true);
 
       setIntroMeta();
+      setIntroTrustNote();
       renderAuthorContent();
       updateAuthorToggle();
       renderLanguageOptions();
@@ -2439,6 +2633,7 @@
     document.getElementById('toTopBtn').addEventListener('click', () => showScreen('intro'));
     authorBox.addEventListener('toggle', updateAuthorToggle);
 
+    applyUrlState();
     syncLocalizedChrome();
   </script>
 
