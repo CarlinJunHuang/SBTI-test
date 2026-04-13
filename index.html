@@ -2468,6 +2468,22 @@
     applyUrlState();
     syncLocalizedChrome();
   </script>
+  <script>
+    window.va = window.va || function () {
+      (window.vaq = window.vaq || []).push(arguments);
+    };
+
+    // Keep language-specific traffic visible while avoiding noisy URL splits from gender toggles.
+    window.va('beforeSend', (event) => {
+      const url = new URL(event.url);
+      url.searchParams.delete('gender');
+      return {
+        ...event,
+        url: url.toString()
+      };
+    });
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 </html>
