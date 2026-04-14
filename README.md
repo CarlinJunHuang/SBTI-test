@@ -12,6 +12,10 @@
 
 - [https://sbti-test-sigma-flax.vercel.app](https://sbti-test-sigma-flax.vercel.app)
 
+独立仓库：
+
+- [https://github.com/CarlinJunHuang/SBTI-test-multilingual](https://github.com/CarlinJunHuang/SBTI-test-multilingual)
+
 可分享参数：
 
 - `?lang=zh`：中文原版
